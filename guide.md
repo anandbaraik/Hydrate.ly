@@ -86,10 +86,9 @@ For technical decisions, prefer the Chrome Extensions docs and Microsoft Edge ex
 
 ## Step 3: Choose your AI tool and stack
 
-Use Cursor or Claude Code. A browser extension is built and tested locally, so you want a tool that works inside a local repository.
+Use Claude Code. A browser extension is built and tested locally, so you want a tool that works inside a local repository.
 
-- **Cursor:** more control, local development, project rules in `.cursor/rules/`
-- **Claude Code:** terminal-based, repository-level and agentic tasks
+- **Claude Code:** repository-level and agentic tasks, in the terminal or the VS Code extension. Project context lives in `CLAUDE.md`, with path-specific rules in `.claude/rules/`
 
 **Recommended stack: WXT + Vue 3 + TypeScript + Tailwind**
 
@@ -109,7 +108,7 @@ CRXJS is a fine alternative now that the scope is Chromium-only. The cross-brows
 
 **Required**
 
-- Cursor or VS Code (with Claude Code if you prefer the terminal)
+- Claude Code, in the terminal or as the VS Code extension
 - Git and a GitHub account
 - Node.js LTS and npm
 - Google Chrome and Microsoft Edge for testing
@@ -157,8 +156,9 @@ hydrately/
 │   ├── SECURITY.md
 │   ├── DECISIONS.md
 │   └── MEMORY.md
-├── .cursor/
+├── .claude/
 │   └── rules/
+├── CLAUDE.md
 ├── RULES.md
 ├── TASKS.md
 └── README.md
@@ -170,6 +170,7 @@ hydrately/
 | ARCHITECTURE.md | How will we build it? | Planning |
 | DESIGN.md | How should it look? | Planning |
 | RULES.md | How should AI code? | Planning |
+| CLAUDE.md | What does Claude Code read first? | Planning |
 | TASKS.md | What should we build next? | Development |
 | DECISIONS.md | Why did we decide this? | Development |
 | MEMORY.md | What is the current state? | Development |
@@ -393,7 +394,7 @@ RULES.md is the AI's rulebook for this project.
 - Small commits with descriptive messages.
 ```
 
-In Cursor, split these into `.cursor/rules/` files such as `general.mdc`, `extension.mdc`, `ui.mdc` and `testing.mdc`.
+In Claude Code, import the rulebook from `CLAUDE.md` with `@RULES.md`, so it loads every session. Then split the path-specific rules into `.claude/rules/` files such as `extension.md`, `ui.md` and `testing.md`, each with a `paths:` list so it loads only when those files are touched.
 
 ## Step 11: Create TASKS.md
 
@@ -783,12 +784,11 @@ hydrately/
 │   ├── SECURITY.md
 │   ├── DECISIONS.md
 │   └── MEMORY.md
-├── .cursor/
+├── .claude/
 │   └── rules/
-│       ├── general.mdc
-│       ├── extension.mdc
-│       ├── ui.mdc
-│       └── testing.mdc
+│       ├── extension.md
+│       ├── ui.md
+│       └── testing.md
 ├── entrypoints/
 │   ├── background.ts
 │   ├── popup/
@@ -801,6 +801,7 @@ hydrately/
 ├── utils/
 ├── tests/
 ├── public/            # icons, chime audio
+├── CLAUDE.md
 ├── RULES.md
 ├── TASKS.md
 ├── README.md

@@ -1,0 +1,5 @@
+{
+  // Compiler options and the `@/` path alias come from the file WXT
+  // generates on `npm install` (via `wxt prepare`). Add overrides below it.
+  "extends": "./.wxt/tsconfig.json"
+}
