@@ -31,7 +31,7 @@ All data stays on the device.
 
 ## ADR-009: The project lives at the repository root
 The guide scaffolds into a `hydrately/` subfolder. This repository is
-the project, so the WXT app sits at the root next to `guide.md`.
+the project, so the WXT app sits at the root next to `GUIDE.md`.
 
 ## ADR-010: The design system replaces the guide's placeholder palette
 The guide's DESIGN.md colours (#1e3a5f, #3B82F6) were placeholders to

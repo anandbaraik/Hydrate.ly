@@ -266,7 +266,7 @@ in [docs/DECISIONS.md](docs/DECISIONS.md).
 ├── assets/styles/        # Tailwind and design tokens
 ├── public/               # icons, chime audio
 ├── scripts/              # asset generation
-├── guide.md              # the workflow this project follows
+├── GUIDE.md              # the workflow this project follows
 ├── CLAUDE.md             # what Claude Code reads at the start of a session
 ├── RULES.md              # how AI (and humans) should code here
 ├── TASKS.md              # what is done and what to build next
@@ -338,7 +338,7 @@ in both Chrome and Edge before publishing.
 ## Working with Claude Code
 
 This project is developed with [Claude Code](https://claude.com/claude-code)
-and follows the workflow in [guide.md](guide.md).
+and follows the workflow in [GUIDE.md](GUIDE.md).
 
 Claude Code loads [CLAUDE.md](CLAUDE.md) at the start of every session.
 It pulls in `RULES.md` and points to the docs to read before changing
